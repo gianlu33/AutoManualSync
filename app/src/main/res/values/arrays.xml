@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="array_time_units">
+        <item>@string/seconds</item>
+        <item>@string/minutes</item>
+        <item>@string/hours</item>
+        <item>@string/days</item>
+    </array>
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewStatusStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_view_status_static"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFrequencyStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_view_frequency_static"
+        app:layout_constraintStart_toStartOf="@+id/textViewStatusStatic"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatusStatic" />
+
+    <TextView
+        android:id="@+id/textViewTimeSleepStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_view_time_sleep_static"
+        app:layout_constraintStart_toStartOf="@+id/textViewFrequencyStatic"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFrequencyStatic" />
+
+    <TextView
+        android:id="@+id/textViewNotificationsStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_view_notifications_static"
+        app:layout_constraintStart_toStartOf="@+id/textViewTimeSleepStatic"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTimeSleepStatic" />
+
+    <Button
+        android:id="@+id/buttonEnabler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNotificationsStatic" />
+
+    <TextView
+        android:id="@+id/textViewInfos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewNotificationsStatic"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEnabler" />
+
+    <TextView
+        android:id="@+id/textViewNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_view_note"
+        app:layout_constraintStart_toStartOf="@+id/textViewInfos"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfos" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewStatusStatic"
+        app:layout_constraintStart_toEndOf="@+id/textViewStatusStatic" />
+
+    <TextView
+        android:id="@+id/textViewFrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewFrequencyStatic"
+        app:layout_constraintStart_toEndOf="@+id/textViewFrequencyStatic" />
+
+    <TextView
+        android:id="@+id/textViewTimeSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTimeSleepStatic"
+        app:layout_constraintStart_toEndOf="@+id/textViewTimeSleepStatic" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewNotificationsStatic"
+        app:layout_constraintStart_toEndOf="@+id/textViewNotificationsStatic" />
+
+</android.support.constraint.ConstraintLayout>
