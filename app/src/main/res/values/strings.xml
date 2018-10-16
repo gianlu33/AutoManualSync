@@ -8,12 +8,9 @@
     <string name="text_view_status_disabled">DISABLED</string>
     <string name="text_view_frequency_static">Sync every</string>
     <string name="text_view_time_sleep_static">Sync on for</string>
-    <string name="text_view_frequency_time_sleep">%d %s</string>
     <string name="text_view_notifications_static">Enable notifications</string>
     <string name="button_text_enable">Enable</string>
     <string name="button_text_disable">Disable</string>
-    <string name="text_view_infos_enabled">AutoManual Sync is currently enabled.\nSync every %s for %s</string>
-    <string name="text_view_infos_disabled">AutoManual Sync is currently disabled.</string>
     <string name="text_view_note">Note:\nAutoManual Sync would work only if sync is off. Otherwise the service would do nothing.</string>
 
     <!-- time -->
@@ -24,9 +21,9 @@
 
     <!-- sharedpreferences -->
     <string name="shared_preferences_status" translatable="false">__SHARED_PREFERENCES_STATUS__</string>
-    <string name="shared_preferences_frequency_seconds" translatable="false">__SHARED_PREFERENCES_FREQUENCY_MINUTES__</string>
+    <string name="shared_preferences_frequency_time" translatable="false">__SHARED_PREFERENCES_FREQUENCY_TIME__</string>
     <string name="shared_preferences_frequency_time_unit" translatable="false">__SHARED_PREFERENCES_FREQUENCY_TIME_UNIT__</string>
-    <string name="shared_preferences_time_sleep_seconds" translatable="false">__SHARED_PREFERENCES_TIME_SLEEP_MINUTES__</string>
+    <string name="shared_preferences_time_sleep_time" translatable="false">__SHARED_PREFERENCES_TIME_SLEEP_TIME__</string>
     <string name="shared_preferences_time_sleep_time_unit" translatable="false">__SHARED_PREFERENCES_TIME_SLEEP_TIME_UNIT__</string>
     <string name="shared_preferences_enable_notifications" translatable="false">__SHARED_PREFERENCES_ENABLE_NOTIFICATIONS__</string>
 </resources>

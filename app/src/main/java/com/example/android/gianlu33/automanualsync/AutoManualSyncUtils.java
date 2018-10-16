@@ -1,10 +1,12 @@
 package com.example.android.gianlu33.automanualsync;
 
-import android.content.Context;
-
 public class AutoManualSyncUtils {
+    public static final int jobID = 0;
 
-    public static String getTimeFormatted(Context context, int seconds, int index) {
+    public static int getSeconds(int seconds, int index) {
+        //todo rivedi un attimo, seconds non è più secodi ma tempo con unità in base a index, e devo restituire i secondi
+        //todo ma forse è giusta uguale
+
         int timeConverted = seconds;
 
         for(int i=0; i<index; i++) {
@@ -14,11 +16,6 @@ public class AutoManualSyncUtils {
                 timeConverted /= 60;
         }
 
-        return context.getString(R.string.text_view_frequency_time_sleep,
-                timeConverted,
-                context.getResources().getStringArray(R.array.array_time_units)[index]);
-
-
-
+        return timeConverted;
     }
 }

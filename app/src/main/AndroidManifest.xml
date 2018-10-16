@@ -19,6 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".AutoManualSyncJob"
+            android:permission="android.permission.BIND_JOB_SERVICE" >
+
+        </service>
     </application>
 
 </manifest>
