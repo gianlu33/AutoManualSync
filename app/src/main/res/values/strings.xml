@@ -14,16 +14,28 @@
     <string name="text_view_note">Note:\nAutoManual Sync would work only if sync is off. Otherwise the service would do nothing.</string>
 
     <!-- time -->
-    <string name="seconds">seconds</string>
-    <string name="minutes">minutes</string>
-    <string name="hours">hours</string>
-    <string name="days">days</string>
+    <string name="thirty_seconds">30 seconds</string>
+    <string name="one_minute">1 minute</string>
+    <string name="two_minutes">2 minutes</string>
+    <string name="five_minutes">5 minutes</string>
+    <string name="ten_minutes">10 minutes</string>
+    <string name="fifteen_minutes">15 minutes</string>
+    <string name="thirty_minutes">30 minutes</string>
+    <string name="fourtyfive_minutes">45 minutes</string>
+    <string name="sixty_minutes">60 minutes</string>
+    <string name="ninety_minutes">90 minutes</string>
+    <string name="two_hours">2 hours</string>
+    <string name="three_hours">3 hours</string>
+    <string name="four_hours">4 hours</string>
+    <string name="five_hours">5 hours</string>
+    <string name="six_hours">6 hours</string>
+    <string name="twelve_hours">12 hours</string>
+    <string name="twentyfour_hours">24 hours</string>
+    <string name="fourtyeight_hours">48 hours</string>
 
     <!-- sharedpreferences -->
     <string name="shared_preferences_status" translatable="false">__SHARED_PREFERENCES_STATUS__</string>
-    <string name="shared_preferences_frequency_time" translatable="false">__SHARED_PREFERENCES_FREQUENCY_TIME__</string>
-    <string name="shared_preferences_frequency_time_unit" translatable="false">__SHARED_PREFERENCES_FREQUENCY_TIME_UNIT__</string>
-    <string name="shared_preferences_time_sleep_time" translatable="false">__SHARED_PREFERENCES_TIME_SLEEP_TIME__</string>
-    <string name="shared_preferences_time_sleep_time_unit" translatable="false">__SHARED_PREFERENCES_TIME_SLEEP_TIME_UNIT__</string>
+    <string name="shared_preferences_frequency_time_index" translatable="false">__SHARED_PREFERENCES_FREQUENCY_TIME_INDEX__</string>
+    <string name="shared_preferences_time_sleep_time_index" translatable="false">__SHARED_PREFERENCES_TIME_SLEEP_TIME_INDEX__</string>
     <string name="shared_preferences_enable_notifications" translatable="false">__SHARED_PREFERENCES_ENABLE_NOTIFICATIONS__</string>
 </resources>

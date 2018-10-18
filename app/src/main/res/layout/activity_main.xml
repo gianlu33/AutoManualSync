@@ -80,42 +80,22 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/text_view_notifications_static"
         app:layout_constraintStart_toEndOf="@+id/text_view_notifications_static" />
 
-    <EditText
-        android:id="@+id/edit_text_frequency"
-        android:layout_width="50dp"
+    <Spinner
+        android:id="@+id/spinner_frequency"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="number"
+        android:layout_marginStart="16dp"
+        android:entries="@array/array_frequency_labels"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_view_frequency_static"
         app:layout_constraintStart_toEndOf="@+id/text_view_frequency_static" />
 
-    <EditText
-        android:id="@+id/edit_text_time_sleep"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/text_view_time_sleep_static"
-        app:layout_constraintStart_toEndOf="@+id/text_view_time_sleep_static" />
-
-    <Spinner
-        android:id="@+id/spinner_frequency"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:entries="@array/array_time_units"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_frequency"
-        app:layout_constraintStart_toEndOf="@+id/edit_text_frequency" />
-
     <Spinner
         android:id="@+id/spinner_time_sleep"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:entries="@array/array_time_units"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_time_sleep"
-        app:layout_constraintStart_toEndOf="@+id/edit_text_time_sleep" />
+        android:layout_marginStart="16dp"
+        android:entries="@array/array_time_sleep_labels"
+        app:layout_constraintBaseline_toBaselineOf="@+id/text_view_time_sleep_static"
+        app:layout_constraintStart_toEndOf="@+id/text_view_time_sleep_static" />
 
 </android.support.constraint.ConstraintLayout>

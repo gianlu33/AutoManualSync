@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="array_time_units">
-        <item>@string/seconds</item>
-        <item>@string/minutes</item>
-        <item>@string/hours</item>
-        <item>@string/days</item>
+    <array name="array_frequency_labels">
+        <item>@string/fifteen_minutes</item>
+        <item>@string/thirty_minutes</item>
+        <item>@string/fourtyfive_minutes</item>
+        <item>@string/sixty_minutes</item>
+        <item>@string/ninety_minutes</item>
+        <item>@string/two_hours</item>
+        <item>@string/three_hours</item>
+        <item>@string/four_hours</item>
+        <item>@string/five_hours</item>
+        <item>@string/six_hours</item>
+        <item>@string/twelve_hours</item>
+        <item>@string/twentyfour_hours</item>
+        <item>@string/fourtyeight_hours</item>
     </array>
+
+    <array name="array_time_sleep_labels">
+        <item>@string/thirty_seconds</item>
+        <item>@string/one_minute</item>
+        <item>@string/two_minutes</item>
+        <item>@string/five_minutes</item>
+        <item>@string/ten_minutes</item>
+    </array>
+
+    <array name="array_frequency_values">
+        <item>@integer/fifteen_minutes</item>
+        <item>@integer/thirty_minutes</item>
+        <item>@integer/fourtyfive_minutes</item>
+        <item>@integer/sixty_minutes</item>
+        <item>@integer/ninety_minutes</item>
+        <item>@integer/two_hours</item>
+        <item>@integer/three_hours</item>
+        <item>@integer/four_hours</item>
+        <item>@integer/five_hours</item>
+        <item>@integer/six_hours</item>
+        <item>@integer/twelve_hours</item>
+        <item>@integer/twentyfour_hours</item>
+        <item>@integer/fourtyeight_hours</item>
+    </array>
+
+    <array name="array_time_sleep_values">
+        <item>@integer/thirty_seconds</item>
+        <item>@integer/one_minute</item>
+        <item>@integer/two_minutes</item>
+        <item>@integer/five_minutes</item>
+        <item>@integer/ten_minutes</item>
+    </array>
+
 </resources>
