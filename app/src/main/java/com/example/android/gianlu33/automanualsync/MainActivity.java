@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,14 +21,11 @@ import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-//todo togli poi tutto, logs, cose inutilizzate etc da tutti i files
-//todo rivedi note
-
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = MainActivity.class.getSimpleName();
     private boolean mStatus, mNotifications;
     private int mFrequencyTimeIndex, mTimeSleepTimeIndex;
-    private boolean activateSpinnerFrequency = false, activateSpinnerTime = false;
+    private boolean mActivateSpinnerFrequency = false, mActivateSpinnerTime = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //creo notification channel per l'eventuale notifica (creazione ripetuta non ha effetto)
         createNotificationChannel();
 
         //get views
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerTimeSleep.setSelection(mTimeSleepTimeIndex);
         checkBoxNotifications.setChecked(mNotifications);
 
-        changeUI(textViewStatus, buttonEnabler, res);
+        changeUI(textViewStatus, buttonEnabler);
 
         //listeners
         buttonEnabler.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         .putBoolean(res.getString(R.string.shared_preferences_status), mStatus)
                         .apply();
 
-                changeUI(textViewStatus, buttonEnabler, res);
+                changeUI(textViewStatus, buttonEnabler);
                 scheduleJob();
             }
         });
@@ -85,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
         spinnerFrequency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(!activateSpinnerFrequency) {
-                    activateSpinnerFrequency = true;
+                if(!mActivateSpinnerFrequency) {
+                    mActivateSpinnerFrequency = true;
                     return;
                 }
 
@@ -108,17 +107,14 @@ public class MainActivity extends AppCompatActivity {
         spinnerTimeSleep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(!activateSpinnerTime) {
-                    activateSpinnerTime = true;
+                if(!mActivateSpinnerTime) {
+                    mActivateSpinnerTime = true;
                     return;
                 }
                 mTimeSleepTimeIndex = i;
                 sharedPreferences.edit()
                         .putInt(res.getString(R.string.shared_preferences_time_sleep_time_index), mTimeSleepTimeIndex)
                         .apply();
-
-                scheduleJob();
-
             }
 
             @Override
@@ -138,15 +134,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void changeUI(TextView textViewStatus, Button buttonEnabler, Resources res){
+    private void changeUI(TextView textViewStatus, Button buttonEnabler){
         if(mStatus){
             textViewStatus.setText(R.string.text_view_status_enabled);
-            textViewStatus.setTextColor(res.getColor(R.color.color_text_view_status_enabled));
+            textViewStatus.setTextColor(ContextCompat.getColor(this, R.color.color_text_view_status_enabled));
             buttonEnabler.setText(R.string.button_text_disable);
         }
         else {
             textViewStatus.setText(R.string.text_view_status_disabled);
-            textViewStatus.setTextColor(res.getColor(R.color.color_text_view_status_disabled));
+            textViewStatus.setTextColor(ContextCompat.getColor(this, R.color.color_text_view_status_disabled));
             buttonEnabler.setText(R.string.button_text_enable);
         }
     }
@@ -169,12 +165,11 @@ public class MainActivity extends AppCompatActivity {
 
             int seconds = getResources().getIntArray(R.array.array_frequency_values)[mFrequencyTimeIndex];
 
-            //todo rivedi un attimo
             builder.setPersisted(true)
-                    .setPeriodic(seconds * 1000);
-
+                    .setPeriodic(seconds * 1000)
+                    //.setImportantWhileForeground(true) //segno il job come importante se l'app è in foreground
+                    ;
             jobScheduler.schedule(builder.build());
-
         }
     }
 

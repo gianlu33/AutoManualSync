@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoManual Sync</string>
+    <string name="text_view_status_static">Status:</string>
+    <string name="text_view_status_enabled">ATTIVATO</string>
+    <string name="text_view_status_disabled">DISATTIVATO</string>
+    <string name="text_view_frequency_static">Sincronizza ogni</string>
+    <string name="text_view_time_sleep_static">Stai attivo per</string>
+    <string name="text_view_notifications_static">Abilita notifiche</string>
+    <string name="button_text_enable">Abilita</string>
+    <string name="button_text_disable">Disabilita</string>
+    <string name="text_view_note">Nota: AutoManual Sync funzionerà solo se la sincronizzazione automatica è disattiva. Altrimenti, il servizio non farà nulla.</string>
+    <string name="fifteen_seconds">15 secondi</string>
+    <string name="thirty_seconds">30 secondi</string>
+    <string name="one_minute">1 minuto</string>
+    <string name="two_minutes">2 minuti</string>
+    <string name="five_minutes">5 minuti</string>
+    <string name="ten_minutes">10 minuti</string>
+    <string name="fifteen_minutes">15 minuti</string>
+    <string name="thirty_minutes">30 minuti</string>
+    <string name="fourtyfive_minutes">45 minuti</string>
+    <string name="sixty_minutes">60 minuti</string>
+    <string name="ninety_minutes">90 minuti</string>
+    <string name="two_hours">2 ore</string>
+    <string name="three_hours">3 ore</string>
+    <string name="four_hours">4 ore</string>
+    <string name="five_hours">5 ore</string>
+    <string name="six_hours">6 ore</string>
+    <string name="twelve_hours">12 ore</string>
+    <string name="twentyfour_hours">24 ore</string>
+    <string name="fourtyeight_hours">48 ore</string>
+    <string name="notification_text_title_enabled">Sincronizzazione automatica attivata</string>
+    <string name="notification_text_title_disabled">Sincronizzazione automatica disattivata</string>
+</resources>

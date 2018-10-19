@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AutoManual Sync</string>
+    <string name="app_name" translatable="false">AutoManual Sync</string>
     <string name="shared_preferences_name" translatable="false">com.example.android.gianlu33.automanualsync.SHARED_PREFERENCES</string>
 
     <!-- layout -->
@@ -11,7 +11,7 @@
     <string name="text_view_notifications_static">Enable notifications</string>
     <string name="button_text_enable">Enable</string>
     <string name="button_text_disable">Disable</string>
-    <string name="text_view_note">Note:\nAutoManual Sync would work only if sync is off. Otherwise the service would do nothing.</string>
+    <string name="text_view_note">Note: AutoManual Sync would work only if sync is off. Otherwise the service would do nothing.</string>
 
     <!-- time -->
     <string name="fifteen_seconds">15 seconds</string>
@@ -41,7 +41,7 @@
     <string name="shared_preferences_enable_notifications" translatable="false">__SHARED_PREFERENCES_ENABLE_NOTIFICATIONS__</string>
 
     <!-- Notifications -->
-    <string name="default_notification_channel_name">General</string>
+    <string name="default_notification_channel_name" translatable="false">General</string>
     <string name="default_notification_channel_id" translatable="false">__DEFAULT_NOTIFICATION_CHANNEL_ID__</string>
     <string name="notification_text_title_enabled">AutoSync enabled</string>
     <string name="notification_text_title_disabled">AutoSync disabled</string>

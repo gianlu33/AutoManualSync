@@ -11,7 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 
 public class AutoManualSyncJob extends JobService {
-    public static final String TAG = AutoManualSyncJob.class.getSimpleName();
+    //public static final String TAG = AutoManualSyncJob.class.getSimpleName();
 
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
@@ -61,7 +61,6 @@ public class AutoManualSyncJob extends JobService {
             ContentResolver.setMasterSyncAutomatically(true);
 
             if(notification){
-                //todo notifica
                 mBuilder.setContentTitle(textTitleEnabled);
                 notificationManager.notify(notificationID, mBuilder.build());
             }
@@ -76,7 +75,6 @@ public class AutoManualSyncJob extends JobService {
             ContentResolver.setMasterSyncAutomatically(false);
 
             if(notification){
-                //todo notifica
                 mBuilder.setContentTitle(textTitleDisabled);
                 notificationManager.notify(notificationID, mBuilder.build());
 
@@ -89,6 +87,7 @@ public class AutoManualSyncJob extends JobService {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             jobFinished(jpar, false);
+            this.context = null;
         }
     }
 
