@@ -1,11 +1,14 @@
 package com.example.android.gianlu33.automanualsync;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        createNotificationChannel();
 
         //get views
         textViewStatus = findViewById(R.id.text_view_status);
@@ -90,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
                         .putInt(res.getString(R.string.shared_preferences_frequency_time_index), mFrequencyTimeIndex)
                         .apply();
 
-                Log.v(TAG, "scheduleJob spinnerfrequency");
                 scheduleJob();
 
             }
@@ -113,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
                         .putInt(res.getString(R.string.shared_preferences_time_sleep_time_index), mTimeSleepTimeIndex)
                         .apply();
 
-                Log.v(TAG, "scheduleJob spinner timesleep");
                 scheduleJob();
 
             }
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        jobScheduler.cancelAll();
+        jobScheduler.cancel(jobID);
 
         if(mStatus){
             //schedulo job
@@ -165,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
             JobInfo.Builder builder = new JobInfo.Builder(jobID, serviceComponent);
 
             int seconds = getResources().getIntArray(R.array.array_frequency_values)[mFrequencyTimeIndex];
-            Log.v(TAG, "seconds: " + seconds);
 
             //todo rivedi un attimo
             builder.setPersisted(true)
@@ -173,6 +175,28 @@ public class MainActivity extends AppCompatActivity {
 
             jobScheduler.schedule(builder.build());
 
+        }
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String CHANNEL_ID = getResources().getString(R.string.default_notification_channel_id);
+
+            CharSequence name = getString(R.string.default_notification_channel_name);
+
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+
+            if(notificationManager != null)
+                notificationManager.createNotificationChannel(channel);
+            else
+                Log.e(TAG, "notificationManager is null");
         }
     }
 

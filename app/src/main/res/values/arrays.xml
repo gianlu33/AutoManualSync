@@ -17,6 +17,7 @@
     </array>
 
     <array name="array_time_sleep_labels">
+        <item>@string/fifteen_seconds</item>
         <item>@string/thirty_seconds</item>
         <item>@string/one_minute</item>
         <item>@string/two_minutes</item>
@@ -41,6 +42,7 @@
     </array>
 
     <array name="array_time_sleep_values">
+        <item>@integer/fifteen_seconds</item>
         <item>@integer/thirty_seconds</item>
         <item>@integer/one_minute</item>
         <item>@integer/two_minutes</item>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="frequency_time_default_index">3</integer>
-    <integer name="time_sleep_time_default_index">3</integer>
+    <integer name="time_sleep_time_default_index">4</integer>
     <integer name="auto_manual_sync_job_id">0</integer>
+    <integer name="notification_id">33</integer>
 
+    <integer name="fifteen_seconds">15</integer>
     <integer name="thirty_seconds">30</integer>
     <integer name="one_minute">60</integer>
     <integer name="two_minutes">120</integer>
