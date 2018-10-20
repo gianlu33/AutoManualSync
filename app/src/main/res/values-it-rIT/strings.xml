@@ -9,7 +9,7 @@
     <string name="text_view_notifications_static">Abilita notifiche</string>
     <string name="button_text_enable">Abilita</string>
     <string name="button_text_disable">Disabilita</string>
-    <string name="text_view_note">Nota: AutoManual Sync funzionerà solo se la sincronizzazione automatica è disattiva. Altrimenti, il servizio non farà nulla.</string>
+    <string name="text_view_note">Nota:\nAutoManual Sync funzionerà solo se la sincronizzazione automatica è disattiva. Altrimenti, il servizio non farà nulla.</string>
     <string name="fifteen_seconds">15 secondi</string>
     <string name="thirty_seconds">30 secondi</string>
     <string name="one_minute">1 minuto</string>

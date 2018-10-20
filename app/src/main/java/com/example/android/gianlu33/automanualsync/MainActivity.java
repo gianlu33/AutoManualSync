@@ -2,9 +2,6 @@ package com.example.android.gianlu33.automanualsync;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.job.JobInfo;
-import android.app.job.JobScheduler;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         .apply();
 
                 changeUI(textViewStatus, buttonEnabler);
-                scheduleJob();
+                AutoManualSyncUtils.scheduleJob(MainActivity.this);
             }
         });
 
@@ -94,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         .putInt(res.getString(R.string.shared_preferences_frequency_time_index), mFrequencyTimeIndex)
                         .apply();
 
-                scheduleJob();
+                AutoManualSyncUtils.scheduleJob(MainActivity.this);
 
             }
 
@@ -144,32 +141,6 @@ public class MainActivity extends AppCompatActivity {
             textViewStatus.setText(R.string.text_view_status_disabled);
             textViewStatus.setTextColor(ContextCompat.getColor(this, R.color.color_text_view_status_disabled));
             buttonEnabler.setText(R.string.button_text_enable);
-        }
-    }
-
-    private void scheduleJob(){
-        JobScheduler jobScheduler = getSystemService(JobScheduler.class);
-        int jobID = getResources().getInteger(R.integer.auto_manual_sync_job_id);
-
-        if(jobScheduler == null){
-            Log.e(TAG, "error, jobScheduler is null");
-            return;
-        }
-
-        jobScheduler.cancel(jobID);
-
-        if(mStatus){
-            //schedulo job
-            ComponentName serviceComponent = new ComponentName(this, AutoManualSyncJob.class);
-            JobInfo.Builder builder = new JobInfo.Builder(jobID, serviceComponent);
-
-            int seconds = getResources().getIntArray(R.array.array_frequency_values)[mFrequencyTimeIndex];
-
-            builder.setPersisted(true)
-                    .setPeriodic(seconds * 1000)
-                    //.setImportantWhileForeground(true) //segno il job come importante se l'app è in foreground
-                    ;
-            jobScheduler.schedule(builder.build());
         }
     }
 
