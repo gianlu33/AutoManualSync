@@ -1,7 +1,5 @@
 package com.example.android.gianlu33.automanualsync;
 
-import android.app.job.JobParameters;
-import android.app.job.JobService;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,6 +8,9 @@ import android.os.AsyncTask;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
+
+import com.firebase.jobdispatcher.JobParameters;
+import com.firebase.jobdispatcher.JobService;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

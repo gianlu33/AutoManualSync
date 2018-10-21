@@ -27,9 +27,11 @@
             </intent-filter>
         </activity>
 
+        <!-- todo JobService da togliere ?
         <service
             android:name=".AutoManualSyncJob"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+            -->
 
         <receiver
             android:name=".StartOnBootReceiver"
@@ -42,9 +44,14 @@
         </receiver>
 
         <service
-            android:name=".AutoManualSyncService"
+            android:name=".AutoManualSyncJob"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
