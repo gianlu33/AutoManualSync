@@ -166,4 +166,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //quando premo il tasto back, non chiudo l'app ma rimane aperta in background (sempre attiva quindi)
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
 }

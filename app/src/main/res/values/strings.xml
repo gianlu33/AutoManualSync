@@ -35,7 +35,7 @@
     <string name="fourtyeight_hours">48 hours</string>
 
     <!-- job -->
-    <string name="job_id">__AUTOMANUAL_SYNC_JOB_ID__</string>
+    <string name="job_id" translatable="false">__AUTOMANUAL_SYNC_JOB_ID__</string>
 
     <!-- sharedpreferences -->
     <string name="shared_preferences_status" translatable="false">__SHARED_PREFERENCES_STATUS__</string>

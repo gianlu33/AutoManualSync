@@ -7,18 +7,9 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
-import android.util.Log;
 
 import com.firebase.jobdispatcher.JobParameters;
 import com.firebase.jobdispatcher.JobService;
-
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-//todo rimuovi poi tutta la parte del salvataggio su file di log
 
 public class AutoManualSyncJob extends JobService {
     //public static final String TAG = AutoManualSyncJob.class.getSimpleName();
@@ -69,7 +60,7 @@ public class AutoManualSyncJob extends JobService {
 
             //enable autosync
             ContentResolver.setMasterSyncAutomatically(true);
-            printLogToFile(context, System.currentTimeMillis(), true);
+            //printLogToFile(context, System.currentTimeMillis(), true);
 
             if(notification){
                 mBuilder.setContentTitle(textTitleEnabled);
@@ -85,7 +76,7 @@ public class AutoManualSyncJob extends JobService {
 
             //disable autosync
             ContentResolver.setMasterSyncAutomatically(false);
-            printLogToFile(context, System.currentTimeMillis(), false);
+            //printLogToFile(context, System.currentTimeMillis(), false);
 
             if(notification){
                 mBuilder.setContentTitle(textTitleDisabled);
@@ -110,6 +101,7 @@ public class AutoManualSyncJob extends JobService {
         return false;
     }
 
+    /*
     private void printLogToFile(Context context, long timestamp, boolean hasActivated){
         StringBuffer data;
 
@@ -143,4 +135,5 @@ public class AutoManualSyncJob extends JobService {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         return dateFormat.format(date);
     }
+    */
 }

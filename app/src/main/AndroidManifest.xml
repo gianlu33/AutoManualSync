@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <!-- todo JobService da togliere ?
+        <!--
         <service
             android:name=".AutoManualSyncJob"
             android:permission="android.permission.BIND_JOB_SERVICE" />
