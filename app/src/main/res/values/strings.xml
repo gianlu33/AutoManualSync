@@ -11,7 +11,7 @@
     <string name="text_view_notifications_static">Enable notifications</string>
     <string name="button_text_enable">Enable</string>
     <string name="button_text_disable">Disable</string>
-    <string name="text_view_note">Note:\nAutoManual Sync would work only if sync is off. Otherwise the service would do nothing.</string>
+    <string name="text_view_note">Note:\nAutoManual Sync would work only if sync is off.\nOtherwise the service would do nothing.</string>
 
     <!-- time -->
     <string name="fifteen_seconds">15 seconds</string>
